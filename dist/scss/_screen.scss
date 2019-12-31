@@ -1,0 +1,21 @@
+@media (min-width: 769px) {
+  .colors__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .colors__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .alert {
+    h2 {
+      font-size: 4rem;
+    }
+  }
+}

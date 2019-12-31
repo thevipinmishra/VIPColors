@@ -1,0 +1,226 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fbfcfd;
+  color: #4a5568;
+}
+
+// Padded
+.padded {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+// .container
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Header
+
+header {
+  background-color: #edf2f7;
+  padding: 1rem;
+
+  .branding {
+    font-weight: 600;
+    font-size: 1.5rem;
+    position: relative;
+
+    &::after {
+      content: "Beta";
+      display: inline-block;
+      position: absolute;
+      font-size: 14px;
+      text-transform: uppercase;
+      top: 0;
+      left: 102%;
+      font-weight: 600;
+    }
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  li {
+    display: inline-block;
+    padding: 0 1rem;
+  }
+
+  a {
+    color: #718096;
+  }
+}
+
+// Main
+main {
+  margin-top: 2rem;
+
+  section + section {
+    margin-top: 3rem;
+  }
+}
+
+.section__title {
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 1rem 0 0 1rem;
+  text-align: center;
+}
+
+.colors__grid {
+  margin-top: 1rem;
+  display: grid;
+  padding: 10px;
+  gap: 10px;
+  grid-auto-rows: 150px;
+}
+
+.color {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: transform 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 5px solid hsla(0, 0%, 100%, 0.2);
+    span {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  span {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px solid hsla(0, 0%, 100%, 0.2);
+    border-radius: 1px;
+    display: inline-block;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    // background-color: hsla(0, 0%, 100%, 0.2);
+    padding: 5px 8px;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 100ms cubic-bezier(0.55, 0.085, 0.68, 0.53),
+      transform 100ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+
+  &::before {
+    content: attr(data-color);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #fbfcfd;
+    font-size: 14px;
+    padding: 0.35rem 0.5rem;
+    border-radius: 4px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: normal;
+    color: #2d3748;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    line-height: 0.85;
+  }
+}
+
+// Contribute
+.contribute {
+  background-color: #34495e;
+  padding: 3rem 0;
+  margin-top: 2rem;
+  text-align: center;
+
+  .github {
+    background-color: #fbfcfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    svg {
+      margin-right: 0.25rem;
+      width: 1.35em;
+    }
+  }
+}
+
+// Footer
+
+footer {
+  padding: 10px;
+  color: #718096;
+  text-align: center;
+}
+
+// Alert
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  // transition: opacity 0.4s;
+  opacity: 0;
+  pointer-events: none;
+
+  h2 {
+    font-size: 2.5rem;
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+    padding: 2rem;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    text-transform: uppercase;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes flash {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.flash {
+  animation: flash 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
