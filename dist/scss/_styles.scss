@@ -58,11 +58,18 @@ nav {
 .menu {
   li {
     display: inline-block;
-    padding: 0 1rem;
   }
 
   a {
     color: #718096;
+  }
+}
+
+a {
+  display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -78,8 +85,17 @@ main {
 .section__title {
   font-weight: 700;
   font-size: 2rem;
-  padding: 1rem 0 0 1rem;
+  line-height: 1.35;
+  padding: 1rem 0 0 0;
   text-align: center;
+}
+
+span[id] {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #718096;
 }
 
 .colors__grid {
@@ -144,11 +160,46 @@ main {
   }
 }
 
+// About
+.about {
+  padding: 3rem 0;
+}
+
+.about__inner {
+  border: 2px solid #edf2f7;
+  padding: 1.5rem;
+  border-radius: 3px;
+}
+
+.about__art {
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 240px;
+  }
+}
+
+.about__content {
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  > * + * {
+    margin-top: 1rem;
+  }
+}
+
 // Contribute
 .contribute {
   background-color: #34495e;
   padding: 3rem 0;
-  margin-top: 2rem;
   text-align: center;
 
   .github {
@@ -190,7 +241,7 @@ footer {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  // transition: opacity 0.4s;
+  transition: opacity 0.4s, transform 0.4s;
   opacity: 0;
   pointer-events: none;
 
@@ -222,5 +273,5 @@ footer {
 }
 
 .flash {
-  animation: flash 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: flash 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
