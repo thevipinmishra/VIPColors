@@ -166,7 +166,7 @@ span[id] {
 }
 
 .about__inner {
-  border: 2px solid #edf2f7;
+  // border: 2px solid #edf2f7;
   padding: 1.5rem;
   border-radius: 3px;
 }
@@ -264,6 +264,9 @@ footer {
   0% {
     transform: scale(1.2);
     opacity: 0;
+  }
+
+  50% {
   }
 
   100% {
